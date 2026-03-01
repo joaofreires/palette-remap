@@ -1,0 +1,85 @@
+[build-system]
+requires = ["hatchling>=1.21.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "palette-remap"
+version = "0.1.0"
+description = "Remap image colors to a constrained palette (CLI + API)"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [{ name = "João Freires", email = "joaofreires@tutanota.com" }]
+maintainers = [{ name = "João Freires", email = "joaofreires@tutanota.com" }]
+keywords = []
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Typing :: Typed",
+]
+dependencies = [
+  "Pillow>=9.0.0",
+  "numpy>=1.20.0",
+  "pydantic>=1.8",
+]
+
+[project.scripts]
+palette-remap = "palette_remap.cli:main"
+palette-remap-mcp = "palette_remap.mcp_server:main"
+
+[project.urls]
+Homepage = "https://github.com/joaofreires/palette_remap"
+Repository = "https://github.com/joaofreires/palette_remap"
+Documentation = "https://github.com/joaofreires/palette_remap#readme"
+Issues = "https://github.com/joaofreires/palette_remap/issues"
+Changelog = "https://github.com/joaofreires/palette_remap/releases"
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+dev = ["pytest>=7.0", "ruff>=0.5.7", "mypy>=1.11.0"]
+mcp = ["mcp[cli]>=1.0.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["palette_remap"]
+
+[tool.ruff]
+target-version = "py38"
+line-length = 140
+
+[tool.ruff.lint]
+select = ["E", "F"]
+
+[tool.ruff.format]
+quote-style = "double"
+line-ending = "lf"
+indent-style = "space"
+
+[tool.mypy]
+python_version = "3.12"
+warn_unused_configs = true
+no_implicit_optional = true
+warn_return_any = true
+strict_equality = true
+ignore_missing_imports = true
+allow_redefinition = true
+check_untyped_defs = true
+
+[tool.pytest.ini_options]
+addopts = [
+  "-ra",
+  "--strict-config",
+  "--strict-markers",
+]
+testpaths = ["tests"]
+pythonpath = ["."]
+filterwarnings = [
+  "error::DeprecationWarning",
+  "ignore::UserWarning:pkg_resources",
+]
