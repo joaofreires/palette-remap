@@ -35,11 +35,11 @@ palette-remap = "palette_remap.cli:main"
 palette-remap-mcp = "palette_remap.mcp_server:main"
 
 [project.urls]
-Homepage = "https://github.com/joaofreires/palette_remap"
-Repository = "https://github.com/joaofreires/palette_remap"
-Documentation = "https://github.com/joaofreires/palette_remap#readme"
-Issues = "https://github.com/joaofreires/palette_remap/issues"
-Changelog = "https://github.com/joaofreires/palette_remap/releases"
+Homepage = "https://github.com/joaofreires/palette-remap"
+Repository = "https://github.com/joaofreires/palette-remap"
+Documentation = "https://github.com/joaofreires/palette-remap#readme"
+Issues = "https://github.com/joaofreires/palette-remap/issues"
+Changelog = "https://github.com/joaofreires/palette-remap/releases"
 
 [project.optional-dependencies]
 test = ["pytest>=7.0"]
