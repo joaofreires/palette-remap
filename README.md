@@ -1,6 +1,6 @@
 # palette-remap
 
-Remap pixel-art / sprite image colors to a constrained palette — library, CLI, and MCP server.
+Remap pixel-art / sprite image colors to a constrained palette using RGB Euclidean distance. Built on top of Pillow, with a simple CLI and Python API.
 
 ## Examples
 
